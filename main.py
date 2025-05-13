@@ -1,1 +1,0 @@
-print('I am a child of God')
