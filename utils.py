@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import pandas as pd
 import joblib
 from sklearn.ensemble import RandomForestClassifier, IsolationForest
@@ -102,4 +101,4 @@ with open('Fraud_detection_scaler.pkl', 'rb') as std_scaler:
 
 with open('Fraud_detection_best_rf.pkl', 'rb') as rf_model:
     rf_cls = joblib.load(rf_model)
->>>>>>> 66fb15086bb33ddbf384c19b96ec8013bf8b720b
+
