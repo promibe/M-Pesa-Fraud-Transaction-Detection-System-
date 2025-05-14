@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from user_input import user_input
 from utils import preprocess_and_predict, utils
 from Email_Notifier import mail_sender
@@ -23,3 +24,5 @@ def main():
 if __name__ == "__main__":
     main()
 
+=======
+>>>>>>> 66fb15086bb33ddbf384c19b96ec8013bf8b720b
