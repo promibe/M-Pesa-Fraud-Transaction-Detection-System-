@@ -91,3 +91,5 @@ def preprocess_and_predict(df, std_scaler, iso_cls, rf_cls):
     print(prediction)
     return prediction, result
 
+
+
