@@ -20,6 +20,7 @@ def user_input_streamlit():
     # Combine into full datetime
     timestamp = datetime.combine(date_part, time_part)
     timestamp = timestamp.replace(microsecond=0)
+    email = st.text_input("Enter Email Address: ")
 
     balance_after = balance_before - amount
 
@@ -30,7 +31,8 @@ def user_input_streamlit():
             'balance_before': [balance_before],
             'balance_after': [balance_after],
             'transaction_velocity': [transaction_velocity],
-            'timestamp': [timestamp.strftime('%Y-%m-%d %H:%M:%S')]
+            'timestamp': [timestamp.strftime('%Y-%m-%d %H:%M:%S')],
+            'email': [email]
         })
 
         # Convert to dictionary for JSON serialization

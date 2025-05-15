@@ -37,11 +37,14 @@ class TransactionInput(BaseModel):
     balance_after: float
     transaction_velocity: int
     timestamp: str  # Expected in 'YYYY-MM-DD HH:MM:SS'
+    email: str
 
 @app.post("/predict/")
 def preprocess_and_predict(df: TransactionInput):
     df = pd.DataFrame([df.dict()])
     original_df = df.copy()
+    email = df['email'].values[0]
+    df.drop(columns='email', inplace=True)
     df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
 
     # Encoding the hour of day and the day of week feature to capture real life time and day instead of it numerical value
@@ -139,7 +142,7 @@ def preprocess_and_predict(df: TransactionInput):
     print(result)
     print(prediction)
 
-    mail_sender(result)
+    mail_sender(result, email)
 
     return JSONResponse(content={
         "prediction": int(prediction),

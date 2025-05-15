@@ -3,7 +3,6 @@ import joblib
 from sklearn.ensemble import RandomForestClassifier, IsolationForest
 from sklearn.preprocessing import StandardScaler
 import numpy as np
-import pickle
 
 def utils():
     with open('models/Fraud_detection_scaler.pkl', 'rb') as std_scaler:

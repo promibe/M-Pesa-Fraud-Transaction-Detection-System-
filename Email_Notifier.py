@@ -9,7 +9,7 @@ from user_input import user_input
 import smtplib
 from email.message import EmailMessage
 
-def mail_sender(result):
+def mail_sender(result, email):
     print('sending Mail for Transaction that occured')
     MY_EMAIL = 'pro9jaeduinfo@gmail.com'
     MY_PASSWORD = 'bykfvsekinohtxkj'
@@ -18,7 +18,7 @@ def mail_sender(result):
     msg.set_content(result)  # Assuming format_article_list is a string
     msg['Subject'] = 'Fraudulent Transaction Alert: Notified From SigFinance'
     msg['From'] = MY_EMAIL
-    msg['To'] = ['Promiseibediogwu1@gmail.com']
+    msg['To'] = email
 
     # Send the email
     with smtplib.SMTP('smtp.gmail.com', 587) as conn:
