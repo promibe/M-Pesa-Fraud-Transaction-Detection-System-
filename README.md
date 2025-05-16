@@ -75,6 +75,28 @@ Open http://localhost:8502 to view the transaction dashboard.
 
         docker run -p 8000:8000 -p 8501:8501 -p 8502:8502 fraud-detection-app
 
+The above helps you to create the Docker image locally.
+
+### Pulling Docker image from DockerHub
+
+        docker pull promibe/fraud-detection-app:latest
+
+### Run the Application
+
+        docker run -p 8000:8000 -p 8501:8501 -p 8502:8502 promibe/fraud-detection-app:latest
+
+
+This will:
+
+        Launch the FastAPI backend at http://localhost:8000
+
+        Launch the User GUI (Streamlit) at http://localhost:8501
+
+        Launch the Analytics Dashboard (Streamlit) at http://localhost:8502
+
+⚠️ Make sure Docker is installed and running on your system.
+
+
 
 ### Folder structure
 
@@ -90,6 +112,10 @@ Open http://localhost:8502 to view the transaction dashboard.
         │   ├── Fraud_detection_iso_forest.pkl
         │   └── Fraud_detection_scaler.pkl
         │
+        │── .github/
+        │    └──workflows/
+        │          └── docker-publish.yml
+        │── run_all.py
         ├── testing.py
         ├── .dockerignore
         ├── api_app.py
